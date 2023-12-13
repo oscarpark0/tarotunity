@@ -11,7 +11,6 @@ namespace CardHouse.SampleGames.Tarot
     public class SpreadManager : MonoBehaviour
     {
         public Text SpreadLabel;
-        public CardGroup Deck;
         public GameObject SpreadOrderLabelPrefab;
         public TMP_Text Key;
 
