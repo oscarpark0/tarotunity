@@ -11,7 +11,15 @@ namespace CardHouse.SampleGames.Tarot
         [TextArea(1, 15)]
         public string Instructions;
         public List<CardGroup> Slots;
-
+		public bool IsComplete()
+		{
+			foreach (var slot in Slots)
+			{
+				if (slot.MountedCards.Count == 0)
+					return false;
+			}
+			return true;
+}
         public void FillNext(Card card)
         {
             foreach (var slot in Slots)
