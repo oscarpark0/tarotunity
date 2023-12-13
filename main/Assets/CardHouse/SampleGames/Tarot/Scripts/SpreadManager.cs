@@ -99,10 +99,13 @@ namespace CardHouse.SampleGames.Tarot
                 return;
 
             Spreads[CurrentSpreadIndex].FillNext(Deck.MountedCards[Deck.MountedCards.Count - 1]);
-            // Assuming the spread is finished being dealt here
-            StartCoroutine(SendTarotData(Spreads[CurrentSpreadIndex]));
-        }
-
+			
+			if (Spreads[CurrentSpreadIndex].IsComplete())
+				
+			{
+				StartCoroutine(SendTarotData(Spreads[CurrentSpreadIndex]));
+			}
+		}
         private IEnumerator <object> SendTarotData(TarotSpread spread)
         {
             var tarotData = new
